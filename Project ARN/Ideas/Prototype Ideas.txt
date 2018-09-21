@@ -1,0 +1,15 @@
+Prototype level
+
+- Basic Controls
+- Basic Enimes
+- Baisc Score system
+- Basic XP System
+- Currancy System
+- Basic UI
+
+- Narritive 
+    - Meta Joke on the history with a twitst of Modern day issues such as Loot Boxes, DMC take downs, emulation ect. 
+    - Meta Joke
+    - Loot boxes
+    - "Timed" key
+    - Key to unlock a door, random chance of going through (hard coded 3rd attempt)
