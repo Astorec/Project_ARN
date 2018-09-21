@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 
-public class PlayerControl : MonoBehaviour {
+public class PlayerControl : MonoBehaviour
+{
 
     public float speed = 5f;
-    public float jumpSpeed = 5f;
-
+    public float jump = 5f;
+    
+    private Vector2 moveSpeed;
+    private Vector2 jumpSpeed;
     public Rigidbody2D rb2d;
 
     private void Start()
@@ -12,14 +15,18 @@ public class PlayerControl : MonoBehaviour {
         rb2d = GetComponent<Rigidbody2D>();
     }
 
+    private void Update()
+    {
+        Vector2 movement = new Vector2(Input.GetAxis("Horizontal"), 0);        
+        moveSpeed = movement * speed;       
+        Vector2 jumpForce = new Vector2(0, Input.GetAxis("Jump"));
+        jumpSpeed = jumpForce * jump;
+        
+    }
     private void FixedUpdate()
     {
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
-
-        Vector3 tempVect = new Vector3(h, v, 0);
-        tempVect = tempVect.normalized * speed * Time.deltaTime;
-        rb2d.MovePosition(rb2d.transform.position + tempVect);
+        rb2d.MovePosition(rb2d.position + moveSpeed * Time.fixedDeltaTime);
+        rb2d.MovePosition(rb2d.position + jumpSpeed * Time.fixedDeltaTime);
     }
 
 }
