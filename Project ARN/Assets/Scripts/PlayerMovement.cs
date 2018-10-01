@@ -7,29 +7,34 @@ public class PlayerMovement : MonoBehaviour {
     public float runSpeed = 40f;
     public float jumpForce = 500f;
     public Rigidbody2D rb2d;
+    public Transform groundCheck;
 
-    float moveHorizontal = 0f;
-    float velocity = 0f;
-    bool jump = false;
-
-	// Use this for initialization
-	void Update () {
-
-        moveHorizontal = Input.GetAxisRaw("Horizontal") * runSpeed;
-
-	}
+    bool grounded = false;
+    bool facingRight = true;
 	
 	// Update is called once per frame
 	void FixedUpdate () {
 
-        
+        float moveHorizontal = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonDown("Jump"))
+        if(moveHorizontal != 0)
+        {
+            transform.Translate(new Vector2(moveHorizontal * runSpeed * Time.fixedDeltaTime, 0));
+        }
+
+        //TODO Make Character flip when moving to face correct direction
+
+        grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+
+
+        if (Input.GetButtonDown("Jump") && grounded)
         {
             rb2d.AddForce(new Vector2(0, jumpForce));
-            jump = true;
+            grounded = false;
         }
+   
         
-        jump = false;
 	}
+
+    
 }
