@@ -4,7 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Through
+  - Floor
   layers:
   - Default
   - TransparentFX
@@ -14,15 +14,9 @@ TagManager:
   - UI
   - 
   - 
-<<<<<<< HEAD
-  - Player
-  - Obstacle
-  - 
-=======
   - PostProcessing
   - Player
   - Ground
->>>>>>> 8d9cafa93aa06d6b335e45cb65b24782e8500477
   - 
   - 
   - 
@@ -46,11 +40,7 @@ TagManager:
   - 
   m_SortingLayers:
   - name: Background
-<<<<<<< HEAD
-    uniqueID: 1611635347
-=======
     uniqueID: 2304074219
->>>>>>> 8d9cafa93aa06d6b335e45cb65b24782e8500477
     locked: 0
   - name: Default
     uniqueID: 0
