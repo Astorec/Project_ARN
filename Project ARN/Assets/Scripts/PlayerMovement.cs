@@ -2,39 +2,51 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour {
-    
-    public float runSpeed = 40f;
-    public float jumpForce = 500f;
-    public Rigidbody2D rb2d;
+public class PlayerMovement : MonoBehaviour
+{
+    public Rigidbody2D rb2D;
     public Transform groundCheck;
+    public LayerMask whatIsGround;
 
-    bool grounded = false;
-    bool facingRight = true;
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+    public float moveSpeed;
+    public float jumpHeight;
+    public float groundCheckRadius;
 
-        float moveHorizontal = Input.GetAxisRaw("Horizontal");
+    private bool grounded;
+    private bool doubleJumped;
 
-        if(moveHorizontal != 0)
-        {
-            transform.Translate(new Vector2(moveHorizontal * runSpeed * Time.fixedDeltaTime, 0));
-        }
+    private void FixedUpdate()
+    {
+        grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+    }
 
-        //TODO Make Character flip when moving to face correct direction
+    private void Update()
+    {
 
-        grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
-
-
-        if (Input.GetButtonDown("Jump") && grounded)
-        {
-            rb2d.AddForce(new Vector2(0, jumpForce));
-            grounded = false;
-        }
-   
+         if (Input.GetKey(KeyCode.A))
+            rb2D.velocity = new Vector2(-moveSpeed, rb2D.velocity.y * Time.fixedDeltaTime);
         
-	}
+        if (Input.GetKey(KeyCode.D))
+            rb2D.velocity = new Vector2(moveSpeed, rb2D.velocity.y * Time.fixedDeltaTime);        
 
-    
+        if (grounded)
+            doubleJumped = false;
+
+        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+            Jump();
+        
+
+        if (Input.GetKeyDown(KeyCode.Space) && !doubleJumped && !grounded)
+        {
+            Jump();
+            doubleJumped = true;
+        }
+
+       
+    }
+
+    public void Jump()
+    {
+        rb2D.velocity = new Vector2(rb2D.velocity.x, jumpHeight);
+    }
 }

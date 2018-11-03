@@ -1230,6 +1230,48 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+--- !u!1001 &1483416101
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4614383635926678, guid: 463cc0262db435b4886ce86bfe72c873, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.9751742
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614383635926678, guid: 463cc0262db435b4886ce86bfe72c873, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614383635926678, guid: 463cc0262db435b4886ce86bfe72c873, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1.4946058
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614383635926678, guid: 463cc0262db435b4886ce86bfe72c873, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614383635926678, guid: 463cc0262db435b4886ce86bfe72c873, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614383635926678, guid: 463cc0262db435b4886ce86bfe72c873, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614383635926678, guid: 463cc0262db435b4886ce86bfe72c873, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614383635926678, guid: 463cc0262db435b4886ce86bfe72c873, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 463cc0262db435b4886ce86bfe72c873, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1679860429
 GameObject:
   m_ObjectHideFlags: 0
@@ -1269,7 +1311,7 @@ Transform:
   m_Children:
   - {fileID: 607318168}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1681044643
 GameObject:
@@ -1423,11 +1465,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: -2
+  far clip plane: 1008.72
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.948882
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1450,7 +1492,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1711932843}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.69, y: 1, z: -10}
+  m_LocalPosition: {x: 4.93, y: 1, z: -1.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1483,5 +1525,5 @@ Transform:
   m_Children:
   - {fileID: 1681044644}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
