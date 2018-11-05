@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 58982500567253368}
   - component: {fileID: 61351767026475150}
   - component: {fileID: 114403059635911760}
+  - component: {fileID: 95332727421930096}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -84,7 +85,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3
@@ -101,7 +102,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 1495511740959986}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f1641e4dbb13a8243be41af65f6797d0, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -116,23 +117,41 @@ BoxCollider2D:
   m_GameObject: {fileID: 1495511740959986}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f1641e4dbb13a8243be41af65f6797d0, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.09544551}
+  m_Offset: {x: 0.0032616854, y: 0.18817985}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.73, y: 0.73}
-    newSize: {x: 10.24, y: 1.28}
+    newSize: {x: 0.73, y: 0.73}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.73, y: 0.539109}
+  m_Size: {x: 0.62562823, y: 0.35364032}
   m_EdgeRadius: 0
+--- !u!95 &95332727421930096
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1495511740959986}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1ffca95bcf85db6498391741874921f4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114403059635911760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -152,6 +171,7 @@ MonoBehaviour:
   moveSpeed: 5
   jumpHeight: 10
   groundCheckRadius: 0.1
+  gravity: 0
 --- !u!212 &212952878378586762
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -187,12 +207,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d37a52306071af4aa8f7e089680e7c3, type: 3}
+  m_Sprite: {fileID: 21300024, guid: 4d37a52306071af4aa8f7e089680e7c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 10.24, y: 1.28}
+  m_Size: {x: 0.73, y: 0.73}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
